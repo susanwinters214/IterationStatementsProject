@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection.Metadata.Ecma335;
 
 namespace IterationStatements
 {
@@ -7,66 +8,85 @@ namespace IterationStatements
     {
         static void Main(string[] args)
         {
-                //TODO - Read each comment and complete its instruction
-                // like the example below
+// For Loop
+            Console.WriteLine("START For Loop");
 
-                //Create a List called "numbers" - DONE!
-                var numbers = new List<int>();
+            for (int i=0; i<5; i++)
+            {
+                Console.WriteLine($"{i}");
+            }
+            Console.WriteLine("END For Loop");
+            Console.WriteLine("    ");
+
+
+///////////// INITIALIZE VARIABLES FOR ALL LOOPS /////////////////////
+
+            var numbers = new List<int>();
+            int myNumber = 0;
+
+
+//////// DoWhile Loop - at the end  //////////
+
+            Console.WriteLine("START DoWhile Loop");
+            Console.WriteLine("Add myNumber to the numbers list (starting with 0 and ending at 100).");
+
+            do
+             {
+                    myNumber++;
+                    Console.WriteLine(myNumber);
+                    numbers.Add(myNumber);
+              }
+                while (myNumber < 100) ; 
+                Console.WriteLine("END DoWhile Loop");  
+                Console.WriteLine("    ");
+
+
+ ///////////////////////      While Loop      ///////////////////////////////////////
+
+            Console.WriteLine("START While Loop");
+            Console.WriteLine("Print myNumber until you reach 200");
+
+            while (myNumber < 200)
+            {
+              Console.WriteLine($"myNumber: {myNumber}");
+               myNumber++;
+               numbers.Add(myNumber); 
+            }
             
-            //-----START HERE------------------------------------------
-            //Create a variable of type int and name it num
-            //initialize the variable with a value of 0
+            Console.WriteLine("END While Loop");
+            Console.WriteLine("    ");
 
 
+ ///////////////////////      ForEach Loop   /////////////////////////////////////////
 
-            // Create a do-while loop and use the template below:
+            Console.WriteLine("START ForEach Loop");
+            Console.WriteLine("Print each number in the numbers list");            
 
+            foreach (var item in numbers)
+                
             {
-                // Increment num by 1
-
-                // Then add num to the collection - numbers
-                    // Hint: reference num inside of the Add method's parentheses
-                numbers.Add(/* num */);
-
-            } // <---- While your variable is less than 100
+              Console.WriteLine($"Item: {item}"); 
+            }
+          
+            Console.WriteLine("END ForEachLoop");
+            Console.WriteLine("    ");
 
 
+/////////////////////         For Loop        /////////////////////////////////////////
 
-            // Create a while loop
-            // <--- While num is less than 200
+            Console.WriteLine("START For Loop");
+            Console.WriteLine("Print every number in the numbers list - backwards");
+
+
+            for (int i = 199; i <=numbers.Count && i >=0; i--)
             {
-                // Increment num by 1
-                // Then add num to the collection numbers
-                    //HINT: copy how this was done in the do while loop
-
+                Console.WriteLine($"Number: {numbers[i]}");
+               
             }
 
-
-            // This is to show the user that the numbers will start increasing on the console
-            Console.WriteLine("Increase:");
-
-
-            // Create a foreach loop using the collection - numbers
-                //In the scope of the foreach loop, print each number in numbers
-             
-
-
-            Console.WriteLine("");
-            Console.WriteLine("Decrease:");
-
-
-            // Create a for loop - this will print the numbers in reverse order - from 200 to 1
-                // in your initializer set the value of i to 199
-                // in your conditional, as long as i is less than or equal to the amount of items in "numbers" - use (numbers.Count)
-                // AND as long as i is greater than or equal to 0
-                // Decrement i by 1
-
-            //start for loop here
-            {
-                // place numbers[i] inside of the Console.WriteLine() method
-            }
-
-            //------------End of exercise
+            Console.WriteLine("End of ForLoop");
         }
+
+
     }
 }
